@@ -1,5 +1,6 @@
-var Twit = require(‘twit’);
-var TwitterBot = require(‘node-twitterbot’).TwitterBot;
+var Twit = require("twit");
+var TwitterBot = require("node-twitterbot").TwitterBot;
+require('dotenv').config();
 
 var Bot = new TwitterBot({
  consumer_key: process.env.BOT_CONSUMER_KEY,
