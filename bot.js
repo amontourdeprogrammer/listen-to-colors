@@ -27,3 +27,5 @@ function chooseRandom(myArray) {
 var phrase = chooseRandom(phraseArray) + ", " + chooseRandom(phraseArray);
 
 Bot.tweet(phrase);
+// We need to use Bot.listen (Streaming) / TwitterBotStreamAction to watch the Twitter Timeline.
+// see: https://github.com/nkirby/node-twitterbot/wiki/TwitterBotStreamAction
