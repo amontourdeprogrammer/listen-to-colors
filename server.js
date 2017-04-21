@@ -19,8 +19,8 @@ app.get("/", function (request, response) {
 
 app.get("/tweet", function (request, response) {
     var phrase = exported.chooseRandom();
-    exported.bot.post('statuses/retweet/:id', { id: '854328673339625472' }, function (err, data, response) {
-    console.log(data)
+    exported.bot.get('statuses/mentions_timeline', function (err, data, response) {
+      console.log(data)
     })
     response.send('tweet sent : ' + phrase);
    
