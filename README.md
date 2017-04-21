@@ -1,0 +1,1 @@
+L'objectif est de faire un twitterbot : On écrit la couleur de son humeur du jour, et le twitterbot nous répond en disant "Listen to your color" avec un lien vers une playlist corresponnat à la couleur demandée.
