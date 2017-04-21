@@ -1,29 +1,30 @@
 var Twit = require("twit");
-var TwitterBot = require("node-twitterbot").TwitterBot;
 require('dotenv').config();
 
-var Bot = new TwitterBot({
+var bot = new Twit({
  consumer_key: process.env.BOT_CONSUMER_KEY,
  consumer_secret: process.env.BOT_CONSUMER_SECRET,
  access_token: process.env.BOT_ACCESS_TOKEN,
  access_token_secret: process.env.BOT_ACCESS_TOKEN_SECRET
 });
 
-var phraseArray = [ "hey twitter",
-                    "im tweeting",
-                    "tweet tweet",
-                    "tweetstorm time... 1/22",
-                    "plz RT v important",
-                    "delete ur account",
-                    "it me",
-                    "same",
-                    "#dogpants go on 4 legs!!",
-                    "#thedress is blue and black" ];
+var phraseArray = [ "hello!",
+                    "I am here!",
+                    "bip bip bip",
+                    "you are funny",
+                    "I love cats",
+                    "Game over!",
+                    "Try again",
+                     ];
 
-function chooseRandom(myArray) {
-  return myArray[Math.floor(Math.random() * myArray.length)];
+function chooseRandom() {
+  return phraseArray[Math.floor(Math.random() * phraseArray.length)];
 }
 
-var phrase = chooseRandom(phraseArray) + ", " + chooseRandom(phraseArray);
+//bot.post('statuses/retweet/:id', { id: '854328673339625472' }, function (err, data, response) {
+  //console.log(data)
 
-Bot.tweet(phrase);
+module.exports = {
+  chooseRandom : chooseRandom,
+  bot : bot
+}
